@@ -4,7 +4,7 @@ from .models import Video, Comment
 
 class CommentInLine(admin.StackedInline):
     model = Comment
-    extra = 3
+    extra = 2
     readonly_fields = ("likes",)
 
 

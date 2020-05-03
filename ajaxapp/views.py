@@ -4,7 +4,7 @@ from ajaxapp.models import Video
 
 def hello(request):
     response = {'video': Video.objects.all()}
-    return render(request, 'hello.html', response)
+    return render(request, 'meet.html', response)
 
 
 def adding_like(request):
