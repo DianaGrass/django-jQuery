@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <h1>hello</h1>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
-
 <body>
-
+{% for v in video %}
+    <h3>{{ v.title }}</h3>
+    <iframe width="1280" height="720" src="{{ v.url }}"></iframe>
+    <h4>{{ v.description }}</h4>
+    <h7>Date publish: {{ v.date }} </h7>
+    {% for c in v.comment_set.all %}
+        <h5>{{ c.text }}</h5>
+    {% endfor %}
+{% endfor %}
 </body>
 </html>
