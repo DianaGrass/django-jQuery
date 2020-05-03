@@ -4,24 +4,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sapolski page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{%  static "js/like_script.js" %}"></script>
 </head>
 <body>
-
+<h2 align="right" >Page Sapolski</h2>
+<img align="right" src="{% static "media/robertsapolski.jpeg" %}">
 <div class="container">
-<img src="{% static "media/robertsapolskiy.jpeg" %}">
 {% for v in video %}
     <h3>{{ v.title }}</h3>
     <iframe width="640" height="360" src="{{ v.url }}"></iframe>
     <h4>{{ v.description }}</h4>
-    <h3 class="like_tag" id="{{ v.id }}"> Likes: {{ v.likes }}</h3>
+    <h5 class="like_tag" id="{{ v.id }}"> Likes: {{ v.likes }}</h5>
     <h7>Date publish: {{ v.date }} </h7>
     {% for c in v.comment_set.all %}
         <h5>{{ c.text }}</h5>
-        <h4>Added from: {{ c.comment_user.username }}</h4>
+        <h5>Added from: {{ c.comment_user.username }}</h5>
         <h5>total likes: {{ c.likes }}</h5>
     {% endfor %}
 {% endfor %}

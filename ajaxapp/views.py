@@ -8,7 +8,7 @@ def hello(request):
 
 
 def adding_like(request):
-    video = Video.objects.get(id=request.get["id"])
+    video = Video.objects.get(id=request.GET["id"])
     video.likes += 1
     video.save()
     return HttpResponse(video.likes)

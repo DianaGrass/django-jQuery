@@ -1,5 +1,5 @@
 """
-ASGI config for bookprj project.
+ASGI config for jqproject project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
